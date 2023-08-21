@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .sort-container {
+            margin-bottom: 20px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin-top: 100px;
+        }
+        .custom-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .custom-table th,
+        .custom-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .custom-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .custom-table button {
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center">Books Catalog</h1>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search by book name" id="input">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button" onclick="search()">Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-right">
+                <button type="button" class="btn btn-secondary" onclick="getallbook()">Get All Books</button>
+            </div>
+        </div>
+        <div class="sort-container text-center mt-4">
+            <span class="mr-2">Sort By:</span>
+            <div class="btn-group" role="group">
+                <button class="btn btn-success" onclick="sortTitle()">Title</button>
+                <button class="btn btn-success" onclick="sortYear()">Year Published</button>
+                <button class="btn btn-success" onclick="sortLanguage()">Language</button>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div id="searchresult" class="container"></div>
+    <p id="msg"></p>
+    <br /><br />
+
+    <div class="card-container">
+        <div
+          class="card flex-row flex-wrap"
+          id="card"
+          style="
+            width: 20rem;
+            display: none;
+            text-align: center;">
+          <div class="card-header border-0">
+            <img class="card-img-top" id="image" />
+          </div>
+          <div class="card-block px-2">
+            <h5 class="card-title" id="title"></h5>
+            <p class="card-text" id="author"></p>
+            <p class="card-text" id="publisher"></p>
+            <p class="card-text" id="publishyear"></p>
+            <p class="card-text" id="language"></p>
+            <p class="card-text" id="genre"></p>
+            <p class="card-text" id="description"></p>
+            <p class="card-text" id="price"></p>
+
+            <div class="h-10"></div>
+          </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    const bookinfo = [];
+    xmlDoc = loadXML();
+    var x = xmlDoc.getElementsByTagName("book");
+
+    for (let i = 0; i < x.length; i++) {
+    bookinfo.push({
+        title: x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue,
+        author: x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue,
+        publisher: x[i].getElementsByTagName("publisher")[0].childNodes[0].nodeValue,
+        publishyear: x[i].getElementsByTagName("publishyear")[0].childNodes[0].nodeValue,
+        language: x[i].getElementsByTagName("detail")[0].getElementsByTagName("language")[0].childNodes[0].nodeValue,
+        genre: x[i].getElementsByTagName("detail")[0].getElementsByTagName("genre")[0].childNodes[0].nodeValue,
+        description: x[i].getElementsByTagName("detail")[0].getElementsByTagName("description")[0].childNodes[0].nodeValue,
+        price: x[i].getElementsByTagName("detail")[0].getElementsByTagName("price")[0].childNodes[0].nodeValue,
+        image: x[i].getElementsByTagName("image")[0].childNodes[0].nodeValue,
+        id: i
+    });
+    }
+
+    function loadXML()
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "books.xml", false);
+        xhttp.send();
+        return xhttp.responseXML;
+    }
+
+
+    function search()
+    {
+        clearDOM();
+        xmlDoc = loadXML();
+        console.log(xmlDoc);
+        x = xmlDoc.getElementsByTagName("book");
+        input = document.getElementById("input").value;
+        size = input.length;
+
+
+        if (!input) 
+        {
+            document.getElementById("searchresult").innerHTML = "";
+            document.getElementById("msg").innerHTML = "Please enter a valid value";
+            return false;
+         }
+
+        let arr = Array.from(x);
+        let bookTitle = [];
+        for(let i = 0;i<arr.length;i++)
+        {
+            bookTitle.push( arr[i].getElementsByTagName("title")[0].childNodes[0].nodeValue);
+        }
+        console.log(bookTitle);
+        document.getElementById("searchresult").innerHTML = "";
+        var table = document.createElement("table");
+        table.className = "custom-table";
+        var resultRow  = document.createElement("tr");
+        var titleCell  = document.createElement("th");
+        var authorCell = document.createElement("th");
+        titleCell.innerHTML = "title";
+        resultRow.appendChild(titleCell);
+        authorCell.innerHTML = "author";
+        resultRow.appendChild(authorCell);
+        table.appendChild(resultRow);
+
+        const result = bookTitle.filter((title, i) => 
+        {
+          if (title && title.toLowerCase().includes(input.toLowerCase()))
+          {
+            document.getElementById("msg").innerHTML = "";
+            var resultRow = document.createElement("tr");
+            var titleCell = document.createElement("td");
+            var authorCell = document.createElement("td");
+            var btn = document.createElement("button");
+            btn.className = "btn btn-outline-primary";
+            btn.innerHTML = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            btn.onclick = function() 
+            {
+              document.getElementById("searchresult").innerHTML = "";
+              document.getElementById("card").style.display = "block";
+              document.getElementById("image").setAttribute("src","image/" +x[i].getElementsByTagName("image")[0].childNodes[0].nodeValue);
+              document.getElementById("title").innerHTML = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+              document.getElementById("author").innerHTML = "Author : " + x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+              document.getElementById("publisher").innerHTML = "Publisher : " + x[i].getElementsByTagName("publisher")[0].childNodes[0].nodeValue;
+              document.getElementById("publishyear").innerHTML = "Publish Year : " + x[i].getElementsByTagName("publishyear")[0].childNodes[0].nodeValue;
+              document.getElementById("language").innerHTML = "Language : " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("language")[0].childNodes[0].nodeValue;
+              document.getElementById("genre").innerHTML = "Genre : " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("genre")[0].childNodes[0].nodeValue;
+              document.getElementById("description").innerHTML = "Description : " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+              document.getElementById("price").innerHTML = "Price : " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+            };
+            titleCell.append(btn);
+            resultRow.appendChild(titleCell);
+            authorCell.innerHTML = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            resultRow.appendChild(authorCell);
+            table.appendChild(resultRow);
+            document.getElementById("searchresult").appendChild(table);
+          }
+        });
+    }
+        
+    function clearDOM() 
+    {
+        document.getElementById("title").innerHTML = "";
+        document.getElementById("author").innerHTML = "";
+        document.getElementById("publisher").innerHTML = "";
+        document.getElementById("publishyear").innerHTML = "";
+        document.getElementById("language").innerHTML = "";
+        document.getElementById("genre").innerHTML = "";
+        document.getElementById("description").innerHTML = "";
+        document.getElementById("price").innerHTML = "";
+        document.getElementById("image").setAttribute("src", "");
+        document.getElementById("msg").innerHTML = "";
+        document.getElementById("card").style.display = "none";
+        document.getElementById("searchresult").innerHTML = "";
+    }
+
+    function getallbook() {
+        clearDOM();
+        xmlDoc = loadXML();
+        var table = document.createElement("table");
+        table.setAttribute("class", "custom-table");
+        var tableHeaderRow  = document.createElement("tr");
+        var tableHeaderTitle  = document.createElement("th");
+        tableHeaderTitle.innerHTML = "Title";
+        tableHeaderRow.appendChild(tableHeaderTitle);
+        tableHeaderAuthor  = document.createElement("th");
+        tableHeaderAuthor.innerHTML = "Author";
+        tableHeaderRow .appendChild(tableHeaderAuthor);
+        tableHeaderLanguage  = document.createElement("th");
+        tableHeaderLanguage .innerHTML = "Language";
+        tableHeaderRow .appendChild(tableHeaderLanguage );
+        table.appendChild(tableHeaderRow );
+
+        var x = xmlDoc.getElementsByTagName("book");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            (function(i) {
+            var tableRow = document.createElement("tr");
+            var titleCell = document.createElement("td");
+            var btn = document.createElement("button");
+            btn.className = "btn btn-outline-primary";
+            btn.innerHTML = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+            btn.onclick = function() 
+            {
+                document.getElementById("searchresult").innerHTML = "";
+                document.getElementById("card").style.display = "block";
+                document.getElementById("image").setAttribute("src", "image/" + x[i].getElementsByTagName("image")[0].childNodes[0].nodeValue);
+                document.getElementById("title").innerHTML = x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                document.getElementById("author").innerHTML = "Author: " + x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                document.getElementById("publisher").innerHTML = "Publisher: " + x[i].getElementsByTagName("publisher")[0].childNodes[0].nodeValue;
+                document.getElementById("publishyear").innerHTML = "Publish Year: " + x[i].getElementsByTagName("publishyear")[0].childNodes[0].nodeValue;
+                document.getElementById("language").innerHTML = "Language: " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("language")[0].childNodes[0].nodeValue;
+                document.getElementById("genre").innerHTML = "Genre: " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("genre")[0].childNodes[0].nodeValue;
+                document.getElementById("description").innerHTML = "Description: " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                document.getElementById("price").innerHTML = "Price: " + x[i].getElementsByTagName("detail")[0].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+            };
+            titleCell.append(btn);
+            tableRow.appendChild(titleCell);
+            titleCell = document.createElement("td");
+            titleCell.innerHTML = x[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+            tableRow.appendChild(titleCell);
+            titleCell = document.createElement("td");
+            titleCell.innerHTML = x[i].getElementsByTagName("language")[0].childNodes[0].nodeValue;
+            tableRow.appendChild(titleCell );
+            table.appendChild(tableRow);
+            })(i);
+        }
+        document.getElementById("searchresult").innerHTML = ""; // Clear existing content
+        document.getElementById("searchresult").appendChild(table); // Append table to searchresult element
+    }
+
+    function sortTitle() {
+        clearDOM();
+        bookinfo.sort(function(a, b) {
+            if (a.title < b.title) return -1;
+            if (a.title > b.title) return 1;
+            return 0;
+        });
+        var table = document.createElement("table");
+        table.className = "custom-table";
+        table.innerHTML = "";
+        var tableHeaderRow = document.createElement("tr");
+        var tableHeaderTitle = document.createElement("th");
+        tableHeaderTitle.innerHTML = "Title";
+        tableHeaderRow.appendChild(tableHeaderTitle);
+        var tableHeaderAuthor = document.createElement("th");
+        tableHeaderAuthor.innerHTML = "Author";
+        tableHeaderRow.appendChild(tableHeaderAuthor);
+        table.appendChild(tableHeaderRow);
+
+        for (let i = 0; i < bookinfo.length; i++) {
+            var tableRow = document.createElement("tr");
+            var titleCell = document.createElement("td");
+            var btn = document.createElement("button");
+            btn.className = "btn btn-outline-primary";
+            btn.innerHTML = bookinfo[i].title;
+            btn.onclick = function() {
+                document.getElementById("searchresult").innerHTML = "";
+                document.getElementById("card").style.display = "block";
+                document.getElementById("image").setAttribute("src", "image/" + bookinfo[i].image);
+                document.getElementById("title").innerHTML = bookinfo[i].title;
+                document.getElementById("author").innerHTML = "Author :" + bookinfo[i].author;
+                document.getElementById("publisher").innerHTML = "Publisher :" + bookinfo[i].publisher;
+                document.getElementById("publishyear").innerHTML = "Publishe Year :" + bookinfo[i].publishyear;
+                document.getElementById("language").innerHTML = "Language :" + bookinfo[i].language;
+                document.getElementById("genre").innerHTML = "Genre :" + bookinfo[i].genre;
+                document.getElementById("description").innerHTML = "Description :" + bookinfo[i].description;
+                document.getElementById("price").innerHTML = "Price :" + bookinfo[i].price;
+            };
+            titleCell.appendChild(btn);
+            tableRow.appendChild(titleCell);
+            titleCell = document.createElement("td");
+            titleCell.innerHTML = bookinfo[i].author;
+            tableRow.appendChild(titleCell);
+            table.appendChild(tableRow);
+        }
+        document.getElementById("searchresult").innerHTML = "";
+        document.getElementById("searchresult").appendChild(table);
+    }
+    
+    function sortYear()
+    {
+        clearDOM();
+        bookinfo.sort(function(a, b) {
+            if (a.publishyear < b.publishyear) return -1;
+            if (a.publishyear > b.publishyear) return 1;
+            return 0;
+        });
+        var table = document.createElement("table");
+        table.className = "custom-table";
+        table.innerHTML = "";
+        var tableHeaderRow = document.createElement("tr");
+        var tableHeaderTitle = document.createElement("th");
+        tableHeaderTitle.innerHTML = "Title";
+        tableHeaderRow.appendChild(tableHeaderTitle);
+        var tableHeaderYear = document.createElement("th");
+        tableHeaderYear.innerHTML = "publishyear";
+        tableHeaderRow.appendChild(tableHeaderYear);
+        table.appendChild(tableHeaderRow);
+
+        for (let i = 0; i < bookinfo.length; i++) {
+            var tableRow = document.createElement("tr");
+            var titleCell = document.createElement("td");
+            var btn = document.createElement("button");
+            btn.className = "btn btn-outline-primary";
+            btn.innerHTML = bookinfo[i].title;
+            btn.onclick = function() {
+                document.getElementById("searchresult").innerHTML = "";
+                document.getElementById("card").style.display = "block";
+                document.getElementById("image").setAttribute("src", "image/" + bookinfo[i].image);
+                document.getElementById("title").innerHTML = bookinfo[i].title;
+                document.getElementById("author").innerHTML = "Author :" + bookinfo[i].author;
+                document.getElementById("publisher").innerHTML = "Publisher :" + bookinfo[i].publisher;
+                document.getElementById("publishyear").innerHTML = "Publishe Year :" + bookinfo[i].publishyear;
+                document.getElementById("language").innerHTML = "Language :" + bookinfo[i].language;
+                document.getElementById("genre").innerHTML = "Genre :" + bookinfo[i].genre;
+                document.getElementById("description").innerHTML = "Description :" + bookinfo[i].description;
+                document.getElementById("price").innerHTML = "Price :" + bookinfo[i].price;
+            };
+            titleCell.appendChild(btn);
+            tableRow.appendChild(titleCell);
+            titleCell = document.createElement("td");
+            titleCell.innerHTML = bookinfo[i].publishyear;
+            tableRow.appendChild(titleCell);
+            table.appendChild(tableRow);
+        }
+        document.getElementById("searchresult").innerHTML = "";
+        document.getElementById("searchresult").appendChild(table);
+    }
+
+    function sortLanguage()
+    {
+        clearDOM();
+        bookinfo.sort(function(a, b) {
+            if (a.language < b.language) return -1;
+            if (a.language > b.language) return 1;
+            return 0;
+        });
+        var table = document.createElement("table");
+        table.className = "custom-table";
+        table.innerHTML = "";
+        var tableHeaderRow = document.createElement("tr");
+        var tableHeaderTitle = document.createElement("th");
+        tableHeaderTitle.innerHTML = "Title";
+        tableHeaderRow.appendChild(tableHeaderTitle);
+        var tableHeaderlanguage = document.createElement("th");
+        tableHeaderlanguage.innerHTML = "language";
+        tableHeaderRow.appendChild(tableHeaderlanguage);
+        table.appendChild(tableHeaderRow);
+
+        for (let i = 0; i < bookinfo.length; i++) {
+            var tableRow = document.createElement("tr");
+            var titleCell = document.createElement("td");
+            var btn = document.createElement("button");
+            btn.className = "btn btn-outline-primary";
+            btn.innerHTML = bookinfo[i].title;
+            btn.onclick = function() {
+                document.getElementById("searchresult").innerHTML = "";
+                document.getElementById("card").style.display = "block";
+                document.getElementById("image").setAttribute("src", "image/" + bookinfo[i].image);
+                document.getElementById("title").innerHTML = bookinfo[i].title;
+                document.getElementById("author").innerHTML = "Author :" + bookinfo[i].author;
+                document.getElementById("publisher").innerHTML = "Publisher :" + bookinfo[i].publisher;
+                document.getElementById("publishyear").innerHTML = "Publishe Year :" + bookinfo[i].publishyear;
+                document.getElementById("language").innerHTML = "Language :" + bookinfo[i].language;
+                document.getElementById("genre").innerHTML = "Genre :" + bookinfo[i].genre;
+                document.getElementById("description").innerHTML = "Description :" + bookinfo[i].description;
+                document.getElementById("price").innerHTML = "Price :" + bookinfo[i].price;
+            };
+            titleCell.appendChild(btn);
+            tableRow.appendChild(titleCell);
+            titleCell = document.createElement("td");
+            titleCell.innerHTML = bookinfo[i].language;
+            tableRow.appendChild(titleCell);
+            table.appendChild(tableRow);
+        }
+        document.getElementById("searchresult").innerHTML = "";
+        document.getElementById("searchresult").appendChild(table);
+    }
+
+
+    
+</script>
+
+</body>
+</html>

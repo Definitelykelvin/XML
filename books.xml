@@ -1,0 +1,452 @@
+<books>
+    <book>
+        <title>Learning XML</title>
+        <author>Erik T.Ray</author>
+        <publisher>O'Reilly Media</publisher>
+        <publishyear>2003</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Computer</genre>
+            <description>
+            "Learning XML" is a bestselling book that provides a concise understanding of XML and its technologies. It covers core XML concepts, syntax, and related tools such as CSS and XSL. The book also includes information on schema languages and introduces XSL-FO for formatting. It serves as a reliable source for writers, designers, and programmers looking to learn XML efficiently.
+            </description>
+            <price>RM44.66</price>
+        </detail>
+        <image>learningXML.jpg</image>
+    </book>
+    <book>
+        <title>Neural Networks and Deep Learning: A Textbook</title>
+        <author>Charu C. Aggarwal</author>
+        <publisher>Springer</publisher>
+        <publishyear>2018</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Computer</genre>
+            <description>
+            "This book covers both classical and modern models in deep learning. The primary focus is on the theory and algorithms of deep learning. The theory and algorithms of neural networks are particularly important for understanding important concepts, so that one can understand the important design concepts of neural architectures in different applications."
+            </description>
+            <price>RM178.98</price>
+        </detail>
+        <image>neuralnetwork.jpg</image>
+    </book>
+    <book>
+        <title>Learning SPARQL: Querying and Updating with SPARQL 1.1</title>
+        <author>Bob. DuCharme</author>
+        <publisher>O'Reilly Media</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Computer</genre>
+            <description>
+            "Gain hands-on experience with SPARQL, the RDF query language that’s bringing new possibilities to semantic web, linked data, and big data projects. This updated and expanded edition shows you how to use SPARQL 1.1 with a variety of tools to retrieve, manipulate, and federate data from the public web as well as from private sources."
+            </description>
+            <price>RM41.87</price>
+        </detail>
+        <image>learningSPARQL.jpg</image>
+    </book>
+    <book>
+        <title>A Book of Open Shop Scheduling: Algorithms, Complexity and Applications</title>
+        <author>Wieslaw Kubiak</author>
+        <publisher>Springer</publisher>
+        <publishyear>2022</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Computer</genre>
+            <description>
+            "This book provides an in-depth presentation of algorithms for and complexity of open shop scheduling. Open shops allow operations of a job to be executed in any order, contrary to flow and job shops where the order is pre-specified. The author brings the field up to date with more emphasis on new and recent results, and connections with graph edge coloring and mathematical programming. The book explores applications to production and operations management, wireless network scheduling, and timetabling."
+            </description>
+            <price>RM393.81</price>
+        </detail>
+        <image>openshop.jpg</image>
+    </book>
+    <book>
+        <title>Self-Help: The Original Guide to Bootstrapping Your Success</title>
+        <author>Samuel Smiles</author>
+        <publisher>Courier Dover Publications</publisher>
+        <publishyear>2017</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Philosophy</genre>
+            <description>
+            "Author Samuel Smiles coined the phrase self-help with this bestseller, which was originally published in 1859. Smiles envisions a world in which the lowliest members of a community can reach the heights of society through merit and hard work."
+            </description>
+            <price>RM41.42</price>
+        </detail>
+        <image>selfhelp.jpg</image>
+    </book>
+    <book>
+        <title>Semantic Web for the Working Ontologist: Effective Modeling in RDFS and OWL</title>
+        <author>Dean Allemang, James Hendler</author>
+        <publisher>Elsevier</publisher>
+        <publishyear>2011</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Computer</genre>
+            <description>
+            "Semantic Web for the Working Ontologist: Effective Modeling in RDFS and OWL, Second Edition, discusses the capabilities of Semantic Web modeling languages, such as RDFS (Resource Description Framework Schema) and OWL (Web Ontology Language)."
+            </description>
+            <price>RM179.58</price>
+        </detail>
+        <image>semanticwebforworking.jpg</image>
+    </book>
+    <book>
+        <title>Analytical Skills for AI and Data Science: Building Skills for an AI-Driven Enterprise</title>
+        <author>Daniel Vaughan</author>
+        <publisher>O'Reilly Media</publisher>
+        <publishyear>2020</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Computer</genre>
+            <description>
+            "While several market-leading companies have successfully transformed their business models by following data- and AI-driven paths, the vast majority have yet to reap the benefits. How can your business and analytics units gain a competitive advantage by capturing the full potential of this predictive revolution? This practical guide presents a battle-tested end-to-end method to help you translate business decisions into tractable prescriptive solutions using data and AI as fundamental inputs."
+            </description>
+            <price>RM86.24</price>
+        </detail>
+        <image>analyskillforai.jpg</image>
+    </book>
+    <book>
+        <title>The Ultimate Harry Potter and Philosophy: Hogwarts for Muggles</title>
+        <author>William Irwin, Gregory Bassham</author>
+        <publisher>John Wiley &#38; Sons</publisher>
+        <publishyear>2010</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Philosophy</genre>
+            <description>
+            "A philosophical exploration of the entire seven-book Harry Potter series. Harry Potter has been heralded as one of the most popular book series of all time and the philosophical nature of Harry, Hermione, and Ron's quest to rid the world of its ultimate evil is one of the many things that make this series special. "
+            </description>
+            <price>RM65.20</price>
+        </detail>
+        <image>hogwarts.jpg</image>
+    </book>
+    <book>
+        <title>Thus Spoke Zarathustra</title>
+        <author>Friedrich Nietzsche</author>
+        <publisher>Penguin UK</publisher>
+        <publishyear>1974</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Philosophy</genre>
+            <description>
+            "'Enigmatic, vatic, emphatic, passionate . . . Nietzsche's works together make a unique statement in the literature of European ideas' A. C. Grayling"
+            </description>
+            <price>RM37.40</price>
+        </detail>
+        <image>Zarathustra.jpg</image>
+    </book>
+    <book>
+        <title>Retirement Plan</title>
+        <author>Henry K. Hebeler</author>
+        <publisher>John Wiley and Sons</publisher>
+        <publishyear>2001</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Economics</genre>
+            <description>
+            "Use the simple, step-by-step guidance in J.K. Lasser's Your Winning Retirement Plan to double your money for your golden years."
+            </description>
+            <price>RM82.64</price>
+        </detail>
+        <image>Retirement.jpg</image>
+    </book>
+    <book>
+        <title>Getting Started in A Financially Secure Retirement: Pre- and Post-Retirement Planning in a Time of Great Uncertainty</title>
+        <author>Henry K. Hebeler</author>
+        <publisher>John Wiley and Sons</publisher>
+        <publishyear>2007</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Economics</genre>
+            <description>
+            "If you want to make the most of your retirement years, you have to seriously think about the retirement lifestyle you want and the path that will get you there. In order to do this, you need reliable retirement information that will allow you to properly chart your course."
+            </description>
+            <price>RM147.40</price>
+        </detail>
+        <image>Financial_Secure_Retirement.jpg</image>
+    </book>
+    <book>
+        <title>Badai Semalam</title>
+        <author>Khadijah Hashim</author>
+        <publisher>Alaf 21</publisher>
+        <publishyear>2006</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "“Manusia tidak akan tahu apa yang akan terjadi di hari esok. Manusia hanya dapat merancang sesudah hari esok. Tapi tidak semua apa yang dirancang atau diteka berlaku sebagaimana yang dijangka”."
+            </description>
+            <price>RM20.00</price>
+        </detail>
+        <image>Badai_Semalam.jpg</image>
+    </book>
+    <book>
+        <title>Mira Edora</title>
+        <author>Khadijah Hashim</author>
+        <publisher>Kelas Buku Sdn. Bhd.</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Dilema seorang anak gadis bernama Mira Edora yang mencintai gurunya, sedangkan gurunya itu adalah bekas kekasih ibunya suatu ketika dahulu. Apakah yang terjadi kepada insan-insan ini apabila rahsia ini terbongkar? Apakah kesudahan cinta Mira Edora terhadap Cikgu Nordin? Kisah dilema Mira Edora yang mengasyikkan ini pernah difilemkan dengan judul yang sama."
+            </description>
+            <price>RM17.00</price>
+        </detail>
+        <image>Mira_Edora.jpg</image>
+    </book>
+    <book>
+        <title>Laila Azwa Gadisku</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>1986</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Novel Laila Azwa Gadisku ini mengisahkan gadis 16 tahun yg suka menggesek biola mendapat tentangan dari ayahnya. Secara sembunyi2 Laila menyertai Kem Muzik di UM sewaktu ayah dan ibunya pulang ke kampung untuk menghadiri kenduri kawin."
+            </description>
+            <price>RM20.00</price>
+        </detail>
+        <image>Laila Azwa Gadisku.jpg</image>
+    </book>
+    <book>
+        <title>Merpati Putih Terbang Lagi</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>2011</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Novel ini telah memenangi hadiah sagu hati Peraduan Novel Sepuluh Tahun Merdeka. Novel ini telah diterjemahkan ke dalam Bahasa Inggeris dan juga Bahasa Jepun."
+            </description>
+            <price>RM30.00</price>
+        </detail>
+        <image>Merpati Putih Terbang Lagi.jpg</image>
+    </book>
+    <book>
+        <title>Pelangi Pagi</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>1987</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Ditenungnya tulisan itu berkali-kali. Damai rasa hatinya membaca ayat yang sepotong itu. Sesungguhnya itulah hari jadi yang paling istimewa yang belum pernah dirasakan seumpamanya dalam seumur hidup."
+            </description>
+            <price>RM30.00</price>
+        </detail>
+        <image>Pelangi Pagi.jpg</image>
+    </book>
+    <book>
+        <title>Alun Hidup</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>2011</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Alun Hidup mengisahkan tentang Awang yang sanggup meninggalkan kampung halamannya untuk mencuba penghidupan baru. Dia meninggalakan laut untuk memiliki sebidang tanah bagi dijadikan tapak tempat berteduh."
+            </description>
+            <price>RM30.00</price>
+        </detail>
+        <image>Alun Hidup.jpg</image>
+    </book>
+    <book>
+        <title>Di Tengah Kabus</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K PUBLISHING SDN BHD</publisher>
+        <publishyear>2015</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Apakah masalah yangg menghantui fikiran Ainon? Khadijah Hashim melalui Di Tengah Kabus cuba menyelongkar kehidupan Ainon yang menghadapi cabaran dalam kerjayanya sebagai seorang jururawat. Bagaimanakah Ainon menghadapi ragam dan godaan pesakitnya? Siapakah yang berjaya menawan hati jururawat yang manis dan baik hati ini?"
+            </description>
+            <price>RM20.00</price>
+        </detail>
+        <image>Di Tengah Kabus.jpg</image>
+    </book>
+    <book>
+        <title>Trilogi Khadijah Hashim Jilid 1</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>2003</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Terdapat tiga cerita dalam novelni,Laila Azwa Gadisku,Cinta Kedua,dan Senator Adila."
+            </description>
+            <price>RM40.00</price>
+        </detail>
+        <image>Trilogi Khadijah Hashim Jilid 1.jpg</image>
+    </book>
+    <book>
+        <title>Trilogi Khadijah Hashim Jilid 2</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>2003</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Terdapat tiga cerita dalam novelni,Mira Edora,Dekat Disayangi Jauh Dikenang,dan Melawan Arus."
+            </description>
+            <price>RM40.00</price>
+        </detail>
+        <image>Trilogi Khadijah Hashim Jilid 2.jpg</image>
+    </book>
+    <book>
+        <title>Mawar Merah Di Jambangan</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>2003</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Kumpulan 14 cerpen yangmana 4 daripadanya telah memenangi Hadiah Sastera Malaysia, iaitu 'Mawar Merah Di Jambangan', 'Layang-layang Putus Tali', 'Tuah Orang' dan 'Bila Ayah Mogok'."
+            </description>
+            <price>RM30.00</price>
+        </detail>
+        <image>Mawar Merah Di Jambangan.jpg</image>
+    </book>
+    <book>
+        <title>Mencari Azizah</title>
+        <author>Khadijah Hashim</author>
+        <publisher>K Publishing Sdn Bhd</publisher>
+        <publishyear>2011</publishyear>
+        <detail>
+            <language>Malay</language>
+            <genre>Novel</genre>
+            <description>
+            "Menerusi Mencari Azizah, Khadijah Hashim mengajak pembaca menyelami jiwa seorang wanita yang tabah mencari identtiti dan kekuatan diri."
+            </description>
+            <price>RM25.00</price>
+        </detail>
+        <image>Mencari Azizah.jpg</image>
+    </book>
+    <book>
+        <title>Percy Jackson and the Lightning Thief</title>
+        <author>Riordan, Rick</author>
+        <publisher>Puffin (GB)</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Novel</genre>
+            <description>
+            "Half boy. Half God. All Hero. Look, I didn't want to be a half-blood. I never asked to be the son of a Greek God. I was just a normal kid, going to school, playing basketball, skateboarding. The usual. Until I accidentally vaporized my maths teacher. Now I spend my time battling monsters and generally trying to stay alive."
+            </description>
+            <price>RM29.71</price>
+        </detail>
+        <image>Percy Jackson.jpg</image>
+    </book>
+    <book>
+        <title>Percy Jackson and the Sea of Monsters</title>
+        <author>Riordan, Rick</author>
+        <publisher>Puffin (GB)</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Novel</genre>
+            <description>
+            "Half Boy. Half God. All Hero. You can't tell by looking at me that my dad is Poseidon, God of the Sea. It's not easy being a half-blood these days. Even a simple game of dodgeball becomes a death match against an ugly gang of cannibal giants - and that was only the beginning."
+            </description>
+            <price>RM34.95</price>
+        </detail>
+        <image>Percy Jackson and the Sea of Monsters.jpg</image>
+    </book>
+    <book>
+        <title>Percy Jackson and the Titan's Curse</title>
+        <author>Riordan, Rick</author>
+        <publisher>Puffin (GB)</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Novel</genre>
+            <description>
+            "Half Boy. Half God. All Hero. It's not every day you find yourself in combat with a half-lion, half-human. But when you're the son of a Greek God, it happens. And now my friend Annabeth is missing, a Goddess is in chains and only five half-blood heroes can join the quest to defeat the doomsday monster. Oh and guess what."
+            </description>
+            <price>RM34.95</price>
+        </detail>
+        <image>Percy Jackson and the Titan's Curse.jpg</image>
+    </book>
+    <book>
+        <title>Percy Jackson and the Battle of the Labyrinth</title>
+        <author>Riordan, Rick</author>
+        <publisher>Puffin (GB)</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Novel</genre>
+            <description>
+            "Half Boy. Half God. All Hero. Honestly, blowing up another school was the last thing I wanted to do. As the son of a Greek God, I've had my share of near-death disaster - and now my arch enemy Luke wants to invade our camp via an ancient labyrinth. If he succeeds, thousands of bloodthirsty monsters will attack."
+            </description>
+            <price>RM34.95</price>
+        </detail>
+        <image>Percy Jackson and the Battle of the Labyrinth.jpg</image>
+    </book>
+    <book>
+        <title>Percy Jackson and the Last Olympian</title>
+        <author>Riordan, Rick</author>
+        <publisher>Puffin (GB)</publisher>
+        <publishyear>2013</publishyear>
+        <detail>
+            <language>English</language>
+            <genre>Novel</genre>
+            <description>
+            "Half Boy. Half God. All Hero. Most people get presents on their sixteenth birthday. I get a prophecy that could save or destroy the world. It happens when you're the son of Poseidon, God of the Sea. According to an ancient prophecy, I turn sixteen and the fate of the entire world is on me. But no pressure."
+            </description>
+            <price>RM34.95</price>
+        </detail>
+        <image>Percy Jackson and the Last Olympian.jpg</image>
+    </book>
+    <book>
+        <title>自從能夠讀取他人祕密後，我的校園戀愛喜劇就此開演</title>
+        <author>ケンノジ</author>
+        <publisher>台灣角川 (TW)</publisher>
+        <publishyear>2023</publishyear>
+        <detail>
+            <language>Chinese</language>
+            <genre>Novel</genre>
+            <description>
+            "有一天，我變得能夠「看見」可說是他人祕密的「狀態欄」。青梅竹馬瀨川春是【母性‧純情】。她是個辣妹，傳聞很放蕩的她竟然有這一面？看來有必要確認是真是假。只要了解對方，也能輕易打開話匣子。"
+            </description>
+            <price>RM34.32</price>
+        </detail>
+        <image>小说.jpg</image>
+    </book>
+    <book>
+        <title>死刑之病</title>
+        <author>櫛木理宇</author>
+        <publisher>	春天 (TW)</publisher>
+        <publishyear>2023</publishyear>
+        <detail>
+            <language>Chinese</language>
+            <genre>Novel</genre>
+            <description>
+            "史上最凶狠的殺人魔提出一項請求，要找唯一一件冤案的清白證明……改編電影由阿部貞夫、岡田健史、中山美穗、岩田剛典同台飆戲."
+            </description>
+            <price>RM65.60</price>
+        </detail>
+        <image>死刑之病.jpg</image>
+    </book>
+    <book>
+        <title>在異世界獲得超強能力的我，在現實世界照樣無敵</title>
+        <author>美紅</author>
+        <publisher>	東立 (TW)</publisher>
+        <publishyear>2023</publishyear>
+        <detail>
+            <language>Chinese</language>
+            <genre>Novel</genre>
+            <description>
+            "天上優夜在邪教團的陰謀下被送回過去世界，並遇見了傳說中的《賢者》本人，在告別時優夜與他定下的約定……竟然是要代替《賢者》參與『眾神之戰』!?在現實世界這邊，王星學園即將迎來籌備校慶的繁忙時期！他與同學們為了校慶準備而忙得焦頭爛額之際，計劃著要挖角優夜的勁敵學校‧日帝學園提出了一項競賽……？而後，優夜終於與異世界的同伴們一起前往眾神所居的【天界】。"
+            </description>
+            <price>RM38.61</price>
+        </detail>
+        <image>小说2.jpg</image>
+    </book>
+</books>
